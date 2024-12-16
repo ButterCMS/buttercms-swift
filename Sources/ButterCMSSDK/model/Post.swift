@@ -11,6 +11,7 @@ public struct Post: Codable {
     public var created: Date?
     public var updated: Date?
     public var published: Date?
+    public var scheduled: Date?
     public var title: String
     public var slug: String
     public var body: String?
@@ -39,6 +40,7 @@ public struct PostSummary: Codable {
 public enum Status: String, Codable {
     case DRAFT = "draft"
     case PUBLISHED = "published"
+    case SCHEDULED = "scheduled"
 }
 
 public struct PostResponse: Codable {
@@ -50,3 +52,4 @@ public struct PostsResponse: Codable {
     public var meta: PaginationMeta
     public var data: [Post]
 }
+
